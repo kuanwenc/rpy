@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+    <title>Vending&nbsp;Machine</title>
+    <meta name="viewport" id="vp" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="https://api.mazemap.com/js/v2.0.14/mazemap.min.css">
+    <script type='text/javascript' src='https://api.mazemap.com/js/v2.0.14/mazemap.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>   
+</head>
+<body>
+    <div id="map" class="mazemap"></div>
+    <div class="map-overlay top">
+        <div class="map-overlay-inner">
+            <!-- <fieldset>
+                <label>Select Attribute</label>
+                    <select id="attributes" name="attributes">
+                        <option value="none" selected>None</option>
+                        <option value="status">Status</option>
+                        <option value="capacity">Capacity</option>
+                        <option value="access">Access</option>
+                    </select>
+            </fieldset> -->
+            <fieldset>
+                <div id="legends" style="display:block">
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <script>
+        // Just the same way to initialize as always...
+        var myMap = new Mazemap.Map({
+            container: 'map',
+            campuses: 200,
+            center: {lng: 144.96004477800057, lat: -37.79967953307651},            
+            zoom: 16,
+            zLevel: 1,
+            scrollZoom: true,
+            interactive: true,
+            doubleClickZoom: false,
+            touchZoomRotate: true,
+            zLevelControl: true
+        });
+    </script>
+
+    <script type='text/javascript' src='./js/vending-machine.js'></script>
+</body>
